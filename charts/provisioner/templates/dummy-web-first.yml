@@ -9,6 +9,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: charts/dummy-web-first
+    chart: charts/dummy-web-first
     repoURL: https://github.com/tyr13/argotest.git
     targetRevision: HEAD
