@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: dummy-web-second
   namespace: argo-cd-deployments
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: argo-cd-deployments
@@ -12,5 +10,5 @@ spec:
   project: default
   source:
     path: charts/dummy-web-second
-    repoURL: https://github.com/tyr13/argotest
+    repoURL: https://github.com/tyr13/argotest.git
     targetRevision: HEAD
