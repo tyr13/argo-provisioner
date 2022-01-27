@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dummy-web-second
+  namespace: argo-cd-deployments
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argo-cd-deployments
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    chart: dummy-web-second
+    repoURL: https://github.com/tyr13/argotest
+    targetRevision: HEAD
